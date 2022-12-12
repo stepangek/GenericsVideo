@@ -24,3 +24,4 @@ class RepositoryWithRestrict<T : IWithUid> : IEntityRepositoryWithRestrict<T> {
     override fun saveUnsafe(entity: T): ServiceResult = ServiceResult("SUCCESS")
 }
 
+

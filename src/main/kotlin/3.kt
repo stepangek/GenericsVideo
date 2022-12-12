@@ -23,3 +23,4 @@ fun main() {
     val repo = Repository<PersonEntity>() // есть необходимость передавать Т, т.к. в Repository Т не определен
 }
 
+

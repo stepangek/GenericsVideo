@@ -35,4 +35,3 @@ fun main(){
     assert(any[1] == 2)
     assert(any[2] == 3)
 }
-
