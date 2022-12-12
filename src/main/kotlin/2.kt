@@ -1,17 +1,30 @@
-import java.util.ArrayList
+import stubs.Account
 
-// 2. Функция с дженериком
-
-class Printer {
-    fun <T> print(items: ArrayList<T>) {
-        for (t in items) {
-            println(t)
-        }
-    }
+// 2. Класс с дженериком
+class Box<T>(var t: T) {
+    var value = t
 }
 
 fun main() {
-    val printer = Printer()
-    printer.print<Int>(arrayListOf(1,2,3,4,5))
-    printer.print<String>(arrayListOf("Tom", "Alice", "Sam", "Kate", "Bob", "Helen"))
+    /*val badBox = Box() // Not enough information to infer type variable T*/
+
+    val okBox = Box<String>("Великолепный Box со строкой")
+
+    val okBox2 = Box<Int>(2)
+
+    val okBox3 = Box(Account("USD", 300)) // type inference сработал и вывел тип на основе переданного значения конструктора
 }
+
+
+// Так же generic-параметры позволяют выразить некоторые конструкции,
+// Которые невозможно выразить без них. Функции x являются абсолютно идентичными
+// т.к у нас нет необходимости выражать, что какие либо параметры или возвращаемое значение должно быть одного типа
+fun <T:Any> x (t: T) {}
+fun x(t: Any) {}
+
+fun <T:Any> x(t1: T, t2: T) {} // явная корреляция, что параметры t1 и t2 должны быть одонго типа
+fun <T: Any> x2(t1: T) : T { return t1 } // аналогично, только что тип параметра должен быть такой же, как и возвращаемое значение
+
+
+
+

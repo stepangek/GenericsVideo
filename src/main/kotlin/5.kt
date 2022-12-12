@@ -1,4 +1,3 @@
-import stubs.*
 import stubs.validator.*
 
 //5. Использование нескольких generic-параметров
@@ -8,7 +7,6 @@ class Account<T, S>(private val id: T, private val sum: S)
 fun main() {
     val acc = Account<String, Double>("354", 5000.87)
 }
-
 
 abstract class ValidatorService<E : Any, C : IContext<E>>(
     override val validators: Set<IValidatorRule<E, C>>
