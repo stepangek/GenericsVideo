@@ -1,0 +1,4 @@
+package stubs
+
+class Dog {
+}
